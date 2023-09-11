@@ -1,0 +1,34 @@
+---
+title: "FML_Assignment1_Kavya"
+author: "Kavyasree Bommakanti"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup}
+
+# Importing the dataset downloaded from kaggle to R
+
+dataset = read.csv("C:/Kavya/unversity.csv")
+
+#View dataset
+
+dataset
+
+# descriptive statisctics
+
+mean(dataset$Industry_code_NZSIOC)
+sd(dataset$Industry_code_NZSIOC)
+table(dataset$Variable_name)
+dataset$Industry_code_NZSIOC= mean(dataset$Industry_code_NZSIOC)- sd(dataset$Industry_code_NZSIOC)
+dataset$Industry_code_NZSIOC
+
+# Plot
+
+hist(dataset$Value)
+x = dataset$Industry_code_NZSIOC
+y = dataset$Value
+plot(x,y, main = "Area and Length", xlab = "Area", ylab = "Length")
+```
